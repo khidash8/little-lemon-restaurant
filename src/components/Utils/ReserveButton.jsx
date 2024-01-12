@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const ReserveButton = ({ prop, link, className }) => {
   return (
@@ -9,6 +10,12 @@ const ReserveButton = ({ prop, link, className }) => {
       {prop}
     </Link>
   );
+};
+
+ReserveButton.propTypes = {
+  prop: PropTypes.string,
+  link: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default ReserveButton;

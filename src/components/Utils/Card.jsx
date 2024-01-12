@@ -1,4 +1,5 @@
 import ReserveButton from "./ReserveButton";
+import PropTypes from "prop-types";
 
 const Card = ({ heading, price, description, img }) => {
   return (
@@ -17,6 +18,13 @@ const Card = ({ heading, price, description, img }) => {
       />
     </div>
   );
+};
+
+Card.propTypes = {
+  heading: PropTypes.string,
+  price: PropTypes.string,
+  description: PropTypes.string,
+  img: PropTypes.string,
 };
 
 export default Card;

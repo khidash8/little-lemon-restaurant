@@ -7,7 +7,7 @@ import TestimonialCard from "./Utils/TestimonialCard";
 
 const Main = () => {
   return (
-    <main className="mb-10">
+    <main className="mb-10 ">
       {/* Special Menu Section */}
       <div className="container mx-auto space-y-10 p-4">
         {/* Top */}

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Star from "../../assets/star.png";
 
 const TestimonialCard = ({ name, review }) => {
@@ -14,6 +15,12 @@ const TestimonialCard = ({ name, review }) => {
 TestimonialCard.defaultProps = {
   name: "Anonymous",
   review: "No review",
+};
+
+//? set prop types
+TestimonialCard.propTypes = {
+  name: PropTypes.string,
+  review: PropTypes.string,
 };
 
 export default TestimonialCard;
