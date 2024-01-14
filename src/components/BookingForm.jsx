@@ -34,7 +34,7 @@ const BookingForm = (props) => {
   }
 
   return (
-    <form className="flex flex-col items-center space-y-5 p-20 text-left">
+    <form className="flex flex-col items-center space-y-5 p-5 text-left lg:p-20">
       <div className="container mx-auto space-y-4 rounded-md border-2 p-2 shadow-lg">
         <div className="mb-5 flex space-x-6 p-4 shadow">
           <label htmlFor="fName">First Name</label> <br></br>
