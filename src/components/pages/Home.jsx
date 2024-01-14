@@ -1,6 +1,6 @@
-import Header from "../Header";
-import HomeAbout from "../HomeAbout";
-import Main from "../Main";
+import Header from "../sections/Header";
+import HomeAbout from "../sections/HomeAbout";
+import Main from "../sections/Main";
 const Home = () => {
   return (
     <div>

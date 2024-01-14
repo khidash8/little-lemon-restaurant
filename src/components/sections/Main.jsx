@@ -1,9 +1,9 @@
-import ReserveButton from "./Utils/ReserveButton";
-import Card from "./Utils/Card";
-import Bruschetta from "../assets/food/bruschetta.jpeg";
-import GreekSalad from "../assets/food/greek-salad.webp";
-import LemonDesert from "../assets/food/lemon-dessert.webp";
-import TestimonialCard from "./Utils/TestimonialCard";
+import ReserveButton from "../Utils/ReserveButton";
+import Card from "../Utils/Card";
+import Bruschetta from "../../assets/food/bruschetta.jpeg";
+import GreekSalad from "../../assets/food/greek-salad.webp";
+import LemonDesert from "../../assets/food/lemon-dessert.webp";
+import TestimonialCard from "../Utils/TestimonialCard";
 
 const Main = () => {
   return (

@@ -1,5 +1,5 @@
-import HeroImg from "../assets/food/food1.png";
-import ReserveButton from "./Utils/ReserveButton";
+import HeroImg from "../../assets/food/food1.png";
+import ReserveButton from "../../components/Utils/ReserveButton";
 
 const Header = () => {
   return (

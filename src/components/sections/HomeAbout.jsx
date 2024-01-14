@@ -1,5 +1,5 @@
-import Food4 from "../assets/food/food4.webp";
-import Food5 from "../assets/food/food5.jpeg";
+import Food4 from "../../assets/food/food4.webp";
+import Food5 from "../../assets/food/food5.jpeg";
 
 const HomeAbout = () => {
   return (
