@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ReserveButton from "./Utils/ReserveButton";
 import PropTypes from "prop-types";
+import { Navigate } from "react-router-dom";
 
 const BookingForm = (props) => {
   const [fName, setFName] = useState("");
@@ -11,6 +11,7 @@ const BookingForm = (props) => {
   const [date, setDate] = useState("");
   const [occasion, setOccasion] = useState("");
   const [preferences, setPreferences] = useState("");
+  const [formValidated, setFormValidated] = useState(false);
 
   const [finalTime, setFinalTime] = useState(
     props.availableTimes.map((times) => (
@@ -33,8 +34,29 @@ const BookingForm = (props) => {
     );
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    if (form.checkValidity()) {
+      // Perform form submission logic here
+      console.log("Form is valid. Submitting...");
+      setFormValidated(true);
+    } else {
+      // Display validation error messages
+      form.reportValidity();
+    }
+  }
+
   return (
-    <form className="flex flex-col items-center space-y-5 p-5 text-left lg:p-20">
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col items-center space-y-5 p-5 text-left lg:p-20"
+    >
+      {/* Check if form has been validated */}
+      {formValidated && <Navigate to="/confirmation" />}
+
+      {/* Form */}
       <div className="container mx-auto space-y-4 rounded-md border-2 p-2 shadow-lg">
         <div className="mb-5 flex space-x-6 p-4 shadow">
           <label htmlFor="fName">First Name</label> <br></br>
@@ -47,7 +69,7 @@ const BookingForm = (props) => {
             maxLength={50}
             value={fName}
             onChange={(e) => setFName(e.target.value)}
-          ></input>
+          />
         </div>
 
         <div className="mb-5 flex space-x-6 p-2 shadow">
@@ -60,7 +82,7 @@ const BookingForm = (props) => {
             maxLength={50}
             value={lName}
             onChange={(e) => setLName(e.target.value)}
-          ></input>
+          />
         </div>
 
         <div className="mb-5 flex space-x-6 p-2 shadow">
@@ -74,7 +96,7 @@ const BookingForm = (props) => {
             minLength={4}
             maxLength={200}
             onChange={(e) => setEmail(e.target.value)}
-          ></input>
+          />
         </div>
 
         <div className="mb-5 flex space-x-6 p-2 shadow">
@@ -88,7 +110,7 @@ const BookingForm = (props) => {
             minLength={10}
             maxLength={25}
             onChange={(e) => setTel(e.target.value)}
-          ></input>
+          />
         </div>
 
         <div className="mb-5 flex space-x-6 p-2 shadow">
@@ -102,7 +124,7 @@ const BookingForm = (props) => {
             min={1}
             max={100}
             onChange={(e) => setPeople(e.target.value)}
-          ></input>
+          />
         </div>
 
         <div className="mb-5 flex space-x-6 p-2 shadow">
@@ -113,7 +135,7 @@ const BookingForm = (props) => {
             required
             value={date}
             onChange={handleDateChange}
-          ></input>
+          />
         </div>
 
         <div className="mb-5 flex space-x-6 p-2 shadow">
@@ -173,7 +195,11 @@ const BookingForm = (props) => {
         </small>
 
         {/* confirmation button */}
-        <ReserveButton prop={"Reserve a Table"} link={"/confirmation"} />
+        {/* <ReserveButton prop={"Reserve a Table"} link={"/confirmation"} /> */}
+
+        <button className="inline-block rounded bg-primary-yellow p-4 text-xl text-secondary-dark transition duration-500 hover:border-primary-yellow hover:bg-transparent hover:text-primary-yellow hover:shadow-xl">
+          Submit
+        </button>
       </div>
     </form>
   );

@@ -16,6 +16,7 @@ ReserveButton.propTypes = {
   prop: PropTypes.string,
   link: PropTypes.string,
   className: PropTypes.string,
+  events: PropTypes.string,
 };
 
 export default ReserveButton;
